@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tweether.apps.TweetherConfig',
+    'rest_framework',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -75,11 +78,14 @@ WSGI_APPLICATION = 'tweetherproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tweether',
+        'USER': 'admin',
+        'PASSWORD': 'IllionaireGang',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
