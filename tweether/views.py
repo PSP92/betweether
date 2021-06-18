@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from tweether.models import User, Tweets
+from tweether.models import Logger, Tweets
 from django.contrib.auth.models import User, Group
-from tweether.serializers import UserSerializer, TweetsSerializer, UserSerializer, GroupSerializer
+from tweether.serializers import LoggerSerializer, TweetsSerializer, UserSerializer, GroupSerializer
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -9,9 +9,9 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 # Create your views here.
 
 
-class UserViews(ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class LoggerViews(ModelViewSet):
+    queryset = Logger.objects.all()
+    serializer_class = LoggerSerializer
     permission_classes = [IsAuthenticated]
 
 
