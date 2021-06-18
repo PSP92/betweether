@@ -7,11 +7,12 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 # Create your views here.
+
+
 class UserViews(ModelViewSet):
-     queryset = User.objects.all()
-     serializer_class = UserSerializer
-     permission_classes = [IsAuthenticated]
-    
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class TweetsViews(ModelViewSet):
@@ -25,6 +26,7 @@ class UserViews(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
 
 class GroupViews(ModelViewSet):
     queryset = Group.objects.all()

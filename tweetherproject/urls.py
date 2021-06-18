@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from tweether.views import UserViews, TweetsViews
 from rest_framework_simplejwt.views import (
@@ -23,7 +23,7 @@ from rest_framework_simplejwt.views import (
 )
 
 
-router=DefaultRouter()
+router = DefaultRouter()
 router.register(r'user', UserViews)
 router.register(r"tweets", TweetsViews)
 urlpatterns = [
