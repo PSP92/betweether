@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from tweether.views import LoggerViews, TweetsViews, UserViews
-# from rest_framework_simplejwt.views import (
-#     TokenObtainPairView,
-#     TokenRefreshView,
-# )
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 router = DefaultRouter()
 router.register(r'logger', LoggerViews)
@@ -28,7 +28,7 @@ router.register(r"tweets", TweetsViews)
 router.register(r'user', UserViews)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls))
 ]
