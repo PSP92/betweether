@@ -3,22 +3,24 @@ from tweether.models import Logger, Tweets
 from django.contrib.auth.models import User, Group
 from tweether.serializers import LoggerSerializer, TweetsSerializer, UserSerializer, GroupSerializer
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework_simplejwt import authentication
+from rest_framework.permissions import AllowAny # IsAuthenticated
+# from rest_framework_simplejwt import authentication
 # Create your views here.
 
 
 class LoggerViews(ModelViewSet):
     queryset = Logger.objects.all()
     serializer_class = LoggerSerializer
-    permission_classes = [IsAuthenticated]
-    authentication_classes = (authentication.JWTAuthentication,)
+    permission_classes = [AllowAny]
+    #  permission_classes = [IsAuthenticated]
+    # authentication_classes = (authentication.JWTAuthentication,)
 
 class TweetsViews(ModelViewSet):
     queryset = Tweets.objects.all()
     serializer_class = TweetsSerializer
-    permission_classes = [IsAuthenticated]
-    authentication_classes = (authentication.JWTAuthentication,)
+    permission_classes = [AllowAny]
+    #  permission_classes = [IsAuthenticated]
+    # authentication_classes = (authentication.JWTAuthentication,)
 
 
 class UserViews(ModelViewSet):
@@ -31,5 +33,6 @@ class UserViews(ModelViewSet):
 class GroupViews(ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = [IsAuthenticated]
-    authentication_classes = (authentication.JWTAuthentication,)
+    permission_classes = [AllowAny]
+    #  permission_classes = [IsAuthenticated]
+    # authentication_classes = (authentication.JWTAuthentication,)
