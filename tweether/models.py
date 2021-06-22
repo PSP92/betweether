@@ -13,4 +13,4 @@ class Tweets(models.Model):
     img = models.CharField(max_length=300)
     likes = models.IntegerField(blank=True)
     # unlimited users can reply to tweet with a max character length
-    tags = ArrayField(models.CharField(max_length=200), blank=True)
+    tags = ArrayField(models.CharField(max_length=200), null=True)
