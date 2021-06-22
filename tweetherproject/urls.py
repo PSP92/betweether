@@ -24,7 +24,7 @@ from rest_framework_simplejwt.views import (
 
 router = DefaultRouter()
 router.register(r'logger', LoggerViews)
-router.register(r"tweets", TweetsViews)
+router.register("tweets", TweetsViews)
 router.register(r'user', UserViews)
 urlpatterns = [
     path('admin/', admin.site.urls),

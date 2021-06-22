@@ -12,7 +12,7 @@ class LoggerSerializer(ModelSerializer):
 class TweetsSerializer(ModelSerializer):
     class Meta:
         model = Tweets
-        fields = ["id", "body", "img", "likes", "tags"]
+        fields = ["id", "body", "img", "likes"]
 
 
 class UserSerializer(HyperlinkedModelSerializer):
